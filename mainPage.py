@@ -13,20 +13,20 @@ SIDEBAR_STYLE = {
     "top": 0,
     "left": 0,
     "bottom": 0,
-    "width": "16rem",
+    "width": "8rem",
     "padding": "2rem 1rem",
     "background-color": "#f8f9fa",
 }
 # the styles for the main content position it to the right of the sidebar and
 # add some padding.
 CONTENT_STYLE = {
-    "margin-left": "18rem",
+    "margin-left": "8rem",
     "margin-right": "2rem",
     "padding": "2rem 1rem",
 }
 sidebar = html.Div(
     [
-        html.H2("Menu", className="display-4"),
+        html.H2("Menu", className="display-6"),
         html.Hr(),
         html.P(
             "Start ure work from here", className="lead"
