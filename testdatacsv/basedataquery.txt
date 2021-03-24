@@ -1,0 +1,28 @@
+INSERT INTO microchip_type
+VALUES
+('flash543'),
+('plis231'),
+('proc8732');
+INSERT INTO device_type(microchip_type_id, id)
+VALUES
+('flash543','BNYZ.489'),
+('plis231','BNYZ.488'),
+('proc8732','BNYZ.487'),
+('flash543','BNYZ.906'),
+('proc8732','BNYZ.907');
+INSERT INTO contract(contract_num, contract_date, manufacturer)
+VALUES
+('testContractnum1','1999-01-08','testManufacture1'),
+('testContractnum2','2009-06-01','testManufacture2'),
+('testContractnum3','2021-02-22','testManufacture3');
+INSERT INTO "order"(contract_id, order_num)
+VALUES
+(1,'3415433354234/100'),
+(1,'3452365233223/100'),
+(2,'9858542322344/200'),
+(3,'2234674321675/100');
+INSERT INTO order_position(order_id,device_type_id,count)
+VALUES
+(1,'BNYZ.489',700),
+(1,'BNYZ.488',700),
+(1,'BNYZ.489',700);
