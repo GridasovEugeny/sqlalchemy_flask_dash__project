@@ -25,7 +25,7 @@ contract_tab_styles = {
 contract_tabulator_options = {"selectable": 1}
 
 contract_tabulator_data = []
-for contract in ORMLayer.get_contract_table_df():
+for contract in ORMLayer.select_contract_table():
     contract_tabulator_data.append({
         ORMLayer.contract_table_columns_names[0]: contract[0],
         ORMLayer.contract_table_columns_names[1]: contract[1].strftime('%Y-%m-%d'),

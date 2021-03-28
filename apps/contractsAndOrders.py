@@ -6,7 +6,10 @@ from textwrap import dedent as d
 from app import app
 from database import ORMLayer
 from dash.dependencies import Input, Output, State
+import dash_ui as dui
 
+# Grid Testing
+grid = dui.Grid(_id="grid", num_rows=12, num_cols=12, grid_padding=5)
 # Сборка табулятора контрактов
 '''contract_tab_columns = [{'title': column_name, 'field': column_name, "editor": "input"} for column_name in
                         ORMLayer.contract_table_columns_names]
@@ -23,7 +26,7 @@ contract_tab_styles = {
 contract_tabulator_options = {'layout': 'fitDataFill',
                               'height': '150px', 'selectable': 1}
 contract_tabulator_data = []
-for contract in ORMLayer.get_contract_table_df():
+for contract in ORMLayer.select_contract_table():
     contract_tabulator_data.append({
         ORMLayer.contract_table_columns_names[0]: contract[0],
         ORMLayer.contract_table_columns_names[1]: contract[1].strftime('%Y-%m-%d'),
@@ -51,7 +54,7 @@ order_tab_styles = {
 order_tabulator_options = {'layout': 'fitDataFill',
                            'height': '250px', 'groupBy': 'contract_num', 'selectable': 1}
 order_tabulator_data = []
-for order in ORMLayer.get_order_table_df(None):
+for order in ORMLayer.select_order_table(None):
     order_tabulator_data.append({
         ORMLayer.order_table_columns_names[0]: order[0],
         ORMLayer.order_table_columns_names[1]: order[1],
@@ -78,7 +81,7 @@ orderpos_tabulator_styles = {
 orderpos_tabulator_options = {'layout': 'fitDataFill',
                               'height': '250px', 'selectable': 1}
 orderpos_tabulator_data = []
-for order in ORMLayer.get_order_table_df(None):
+for order in ORMLayer.select_order_table(None):
     order_tabulator_data.append({
         ORMLayer.order_table_columns_names[0]: order[0],
         ORMLayer.order_table_columns_names[1]: order[1],

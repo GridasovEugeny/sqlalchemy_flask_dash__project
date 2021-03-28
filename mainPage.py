@@ -6,7 +6,6 @@ from app import app
 from app import server
 from apps import contractsAndOrders, bills, shipments, warehouse, analytics, home
 
-
 # the style arguments for the sidebar. We use position:fixed and a fixed width
 SIDEBAR_STYLE = {
     "position": "fixed",

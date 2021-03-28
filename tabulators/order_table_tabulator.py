@@ -23,7 +23,7 @@ order_tab_styles = {
 order_tab_options = {"selectable": 1}
 
 order_tab_data = []
-for order in ORMLayer.get_order_table_df(None):
+for order in ORMLayer.select_order_table(None):
     order_tab_data.append({
         ORMLayer.contract_table_columns_names[0]: order[0],
         ORMLayer.contract_table_columns_names[1]: order[1],

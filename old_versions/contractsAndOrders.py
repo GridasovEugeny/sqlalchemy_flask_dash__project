@@ -99,8 +99,8 @@ layout = html.Div([
 
 
 def update_contract_datatable():
-    return ORMLayer.get_contract_table_df().to_dict('records')
+    return ORMLayer.select_contract_table().to_dict('records')
 
 
 def update_order_datatable():
-    return ORMLayer.get_contract_table_df().to_dict('records')
+    return ORMLayer.select_contract_table().to_dict('records')
